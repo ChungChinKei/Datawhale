@@ -27,23 +27,23 @@ shell小练习1：
 ---
 ## 创建三台虚拟机
 
-1.Ubuntu16.04下安装virtualbox
+*Ubuntu16.04下安装virtualbox
  
 ```
 sudo apt-get update
 sudo apt-get install virtualbox
 ```
-2.命令行打开virtualbox
+*命令行打开virtualbox
 ```
 virtualbox
 ```
-3.进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘
-*注意三台虚拟机内存总和不能大于实体机*
-4.分配光驱并加载镜像文件
-5.设置网络（桥接网卡）
-6.启动虚拟机
-7.设置网络
-8.分区
+*进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘
+注意三台虚拟机内存总和不能大于实体机
+*分配光驱并加载镜像文件
+*设置网络（桥接网卡）
+*启动虚拟机
+*设置网络
+*分区
 ## 在本机使用Xshell连接虚拟机
 
 ## CentOS7配置阿里云yum源和EPEL源
