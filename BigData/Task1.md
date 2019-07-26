@@ -42,8 +42,7 @@ virtualbox
 4. 分配光驱并加载镜像文件
 5. 设置网络（桥接网卡）
 6. 启动虚拟机  
-<img width="500" height="500" src="https://github.com/ChungChinKei/Datawhale/blob/master/BigData/picture/CentOS.png"/>
-7. 设置网络
+7. 设置网络  
 8. 分区
 
 ## 在本机使用Xshell连接虚拟机
