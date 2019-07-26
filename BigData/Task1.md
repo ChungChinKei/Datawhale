@@ -45,6 +45,10 @@ virtualbox
 *设置网络
 *分区
 ## 在本机使用Xshell连接虚拟机
+1.Xshell6下载
+下载链接：https://www.netsarang.com/en/xshell/
+2.设置好虚拟机ip
+3.进行连接
 
 ## CentOS7配置阿里云yum源和EPEL源
 1.备份系统的yum源
@@ -87,5 +91,9 @@ CentOS-Base.repo  epel.repo  epel-testing.repo  repo_bak
 [root@DW1 yum.repos.d]# yum repolist enabled
 [root@DW1 yum.repos.d]# yum repolist all
 ```
+## 安装jdk
 
+## linux常用命令
+
+## shell小练习
 
