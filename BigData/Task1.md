@@ -29,7 +29,7 @@ shell小练习1：
 
 1. Ubuntu16.04下安装virtualbox
  
-```
+```bash
 sudo apt-get update
 sudo apt-get install virtualbox
 ```
