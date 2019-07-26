@@ -42,9 +42,7 @@ virtualbox
 4. 分配光驱并加载镜像文件
 5. 设置网络（桥接网卡）
 6. 启动虚拟机  
-  
-![CentOS](https://github.com/ChungChinKei/Datawhale/blob/master/BigData/picture/CentOS.png)  
-  
+<div align=center><img width="300" height="300" src="https://github.com/ChungChinKei/Datawhale/blob/master/BigData/picture/CentOS.png"/></div>
 7. 设置网络
 8. 分区
 
