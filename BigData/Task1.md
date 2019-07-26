@@ -38,7 +38,7 @@ sudo apt-get install virtualbox
 virtualbox
 ```
 3. 进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘  
-`注意:三台虚拟机内存总和不能大于实体机` 
+`三台虚拟机内存总和不能大于实体机` 
 4. 分配光驱并加载镜像文件
 5. 设置网络（桥接网卡）
 6. 启动虚拟机  
@@ -49,6 +49,7 @@ virtualbox
 1. Xshell6下载
 下载链接：https://www.netsarang.com/en/xshell/
 2. 设置好虚拟机ip
+`ip不要设置错误，端口用默认的，不需要改动`
 3. 进行连接
 
 ## CentOS7配置阿里云yum源和EPEL源
@@ -56,7 +57,9 @@ virtualbox
 ```
 [root@DW1 ~]# cd /etc/yum.repos.d/
 [root@DW1 yum.repos.d]# mkdir repo_bak
-[root@DW1 yum.repos.d]# yum -y install wget
+
+#要先安装wget再备份系统yum源，原生CentOS没有wget，后续无法下载阿里云源
+[root@DW1 yum.repos.d]# yum -y install wget 
 Loaded plugins: fastestmirror
 Determining fastest mirrors
  * base: ftp.twaren.net
