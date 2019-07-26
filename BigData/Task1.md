@@ -29,7 +29,7 @@ shell小练习1：
 
 1. Ubuntu16.04下安装virtualbox
  
-```bash
+```
 sudo apt-get update
 sudo apt-get install virtualbox
 ```
@@ -38,14 +38,15 @@ sudo apt-get install virtualbox
 virtualbox
 ```
 3. 进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘  
-  注意:三台虚拟机内存总和不能大于实体机  
-![](https://github.com/ChungChinKei/Datawhale/blob/master/BigData/picture/virtualbox.png)
+![](https://github.com/ChungChinKei/Datawhale/blob/master/BigData/picture/virtualbox.png)  
+注意:三台虚拟机内存总和不能大于实体机  
 
 4. 分配光驱并加载镜像文件
 5. 设置网络（桥接网卡）
 6. 启动虚拟机
 7. 设置网络
 8. 分区
+
 ## 在本机使用Xshell连接虚拟机
 1. Xshell6下载
 下载链接：https://www.netsarang.com/en/xshell/
