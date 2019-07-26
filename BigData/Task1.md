@@ -106,7 +106,11 @@ CentOS-Base.repo  epel.repo  epel-testing.repo  repo_bak
 ```
 在profile文件夹中添加以下内容
 ```
-[root@DW1 yum.repos.d]# vi /etc/profile
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10.e17_6.x86_64 
+JRE_HOME=$JAVA_HOME/jre 
+CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib 
+PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin 
+export JAVA_HOME JRE_HOME CLASS_PATH PATH 
 ```
 4.进行验证
 ```
@@ -114,6 +118,15 @@ CentOS-Base.repo  epel.repo  epel-testing.repo  repo_bak
 ```
 
 ## linux常用命令
-
+```
+cd #切换路径
+ls #查看文件与目录
+mv #移动文件或改名
+rm #删除文件或目录
+mkdir #创建文件夹
+...
+```
 ## shell小练习
+```
 
+```
