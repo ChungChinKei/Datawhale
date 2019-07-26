@@ -27,17 +27,17 @@ shell小练习1：
 ---
 ## 创建三台虚拟机
 
-1.Ubuntu16.04下安装virtualbox
+1. Ubuntu16.04下安装virtualbox
  
 ```
 sudo apt-get update
 sudo apt-get install virtualbox
 ```
-2.命令行打开virtualbox
+2. 命令行打开virtualbox
 ```
 virtualbox
 ```
-3.进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘
+3. 进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘
 注意三台虚拟机内存总和不能大于实体机
 *分配光驱并加载镜像文件
 *设置网络（桥接网卡）
@@ -45,13 +45,13 @@ virtualbox
 *设置网络
 *分区
 ## 在本机使用Xshell连接虚拟机
-1.Xshell6下载
+1. Xshell6下载
 下载链接：https://www.netsarang.com/en/xshell/
-2.设置好虚拟机ip
-3.进行连接
+2. 设置好虚拟机ip
+3. 进行连接
 
 ## CentOS7配置阿里云yum源和EPEL源
-1.备份系统的yum源
+1. 备份系统的yum源
 ```
 [root@DW1 ~]# cd /etc/yum.repos.d/
 [root@DW1 yum.repos.d]# makdir repo_bak
@@ -60,33 +60,33 @@ virtualbox
 [root@DW1 yum.repos.d]# ls
 repo_bak
 ```
-2.下载新的CentOS-Base.repo 到/etc/yum.repos.d/
+2. 下载新的CentOS-Base.repo 到/etc/yum.repos.d/
 ```
 [root@DW1 yum.repos.d]# wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 [root@DW1 yum.repos.d]# ls
 CentOS-Base.repo  repo_bak
 ```
-3.清除缓存
+3. 清除缓存
 ```
 [root@DW1 yum.repos.d]# yum clean all
 ```
-4.生成新的缓存
+4. 生成新的缓存
 ```
 [root@DW1 yum.repos.d]# yum makecache
 ```
-5.安装EPEL源
+5. 安装EPEL源
 ```
 [root@DW1 yum.repos.d]# yum list | grep epel-release
 [root@DW1 yum.repos.d]# yum install -y prep epel-release
 [root@DW1 yum.repos.d]# ls
 CentOS-Base.repo  epel.repo  epel-testing.repo  repo_bak
 ```
-6.再次清除和生成缓存
+6. 再次清除和生成缓存
 ```
 [root@DW1 yum.repos.d]# yum clean all
 [root@DW1 yum.repos.d]# yum makecache
 ```
-7.查看所有的yum源
+7. 查看所有的yum源
 ```
 [root@DW1 yum.repos.d]# yum repolist enabled
 [root@DW1 yum.repos.d]# yum repolist all
