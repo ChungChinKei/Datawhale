@@ -41,7 +41,10 @@ virtualbox
 `注意:三台虚拟机内存总和不能大于实体机` 
 4. 分配光驱并加载镜像文件
 5. 设置网络（桥接网卡）
-6. 启动虚拟机
+6. 启动虚拟机  
+  
+![CentOS](https://github.com/ChungChinKei/Datawhale/blob/master/BigData/picture/CentOS.png)  
+  
 7. 设置网络
 8. 分区
 
