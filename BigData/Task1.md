@@ -131,7 +131,8 @@ mkdir #创建文件夹
 ```
 # 写入脚本
 [root@DW1 test]# vi test.sh
-
+```
+```
 # 脚本为以下内容
 #! /bin/bash
 
@@ -143,7 +144,8 @@ if [ $res = 0 ];then
 echo $i >> output.txt
 fi
 done
-
+```
+```
 # 执行脚本
 [root@DW1 test]# base test.sh
 
