@@ -92,6 +92,26 @@ CentOS-Base.repo  epel.repo  epel-testing.repo  repo_bak
 [root@DW1 yum.repos.d]# yum repolist all
 ```
 ## 安装jdk
+1. 查看已有的jdk版本
+```
+[root@DW1 yum.repos.d]# yum search java|grep jdk
+```
+2.进行安装
+```
+[root@DW1 yum.repos.d]# yum install java-1.8.0-openjdk
+```
+3.设置环境变量
+```
+[root@DW1 yum.repos.d]# vi /etc/profile
+```
+在profile文件夹中添加以下内容
+```
+[root@DW1 yum.repos.d]# vi /etc/profile
+```
+4.进行验证
+```
+[root@DW1 yum.repos.d]# java -version
+```
 
 ## linux常用命令
 
