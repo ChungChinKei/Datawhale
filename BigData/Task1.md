@@ -51,16 +51,16 @@ virtualbox
 直接自动分配即可
 
 ## 在本机使用Xshell连接虚拟机
-1. Xshell6下载
+1. Xshell6下载  
 下载链接：https://www.netsarang.com/en/xshell/  
 
 2. 设置好虚拟机ip  
+`因为我们前面没有手动分配ip，因此需要先查看当前虚拟机的ip`  
+ip不要设置错误，端口用默认的，不需要改动  
 
-`因为我们前面没有手动分配ip，因此需要先查看当前虚拟机的ip`
 ```
 [root@DW1 ~]# ip addr
-```
-ip不要设置错误，端口用默认的，不需要改动  
+```    
 
 3. 进行连接
 
