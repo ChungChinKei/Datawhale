@@ -27,17 +27,17 @@ shell小练习1：
 ---
 ## 创建三台虚拟机
 
-*Ubuntu16.04下安装virtualbox
+1.Ubuntu16.04下安装virtualbox
  
 ```
 sudo apt-get update
 sudo apt-get install virtualbox
 ```
-*命令行打开virtualbox
+2.命令行打开virtualbox
 ```
 virtualbox
 ```
-*进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘
+3.进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘
 注意三台虚拟机内存总和不能大于实体机
 *分配光驱并加载镜像文件
 *设置网络（桥接网卡）
