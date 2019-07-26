@@ -128,5 +128,12 @@ mkdir #创建文件夹
 ```
 ## shell小练习
 ```
-for ((i=1; i<=100: i++));
+for((i=1;i<=100;i++));
+do
+echo $i >> output.txt
+res=$(( $i % 10 ))
+if [ $res = 0 ];then
+echo $i >> output.txt
+fi
+done
 ```
