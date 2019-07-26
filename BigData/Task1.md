@@ -127,7 +127,14 @@ mkdir #创建文件夹
 ...
 ```
 ## shell小练习
+1. 写入脚本
 ```
+[root@DW1 test]# vi test.sh
+```
+脚本内容为：
+```
+#! /bin/bash
+
 for((i=1;i<=100;i++));
 do
 echo $i >> output.txt
@@ -136,4 +143,12 @@ if [ $res = 0 ];then
 echo $i >> output.txt
 fi
 done
+```
+2. 执行脚本
+```
+[root@DW1 test]# base test.sh
+```
+3. 查看输出
+```
+[root@DW1 test]# vi output.txt
 ```
