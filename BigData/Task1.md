@@ -96,11 +96,11 @@ CentOS-Base.repo  epel.repo  epel-testing.repo  repo_bak
 ```
 [root@DW1 yum.repos.d]# yum search java|grep jdk
 ```
-2.进行安装
+2. 进行安装
 ```
 [root@DW1 yum.repos.d]# yum install java-1.8.0-openjdk
 ```
-3.设置环境变量
+3. 设置环境变量
 ```
 [root@DW1 yum.repos.d]# vi /etc/profile
 ```
@@ -112,7 +112,7 @@ CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
 PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin 
 export JAVA_HOME JRE_HOME CLASS_PATH PATH 
 ```
-4.进行验证
+4. 进行验证
 ```
 [root@DW1 yum.repos.d]# java -version
 ```
