@@ -52,8 +52,10 @@ virtualbox
 
 ## 在本机使用Xshell连接虚拟机
 1. Xshell6下载
-下载链接：https://www.netsarang.com/en/xshell/
+下载链接：https://www.netsarang.com/en/xshell/  
+
 2. 设置好虚拟机ip  
+
 `因为我们前面没有手动分配ip，因此需要先查看当前虚拟机的ip`
 ```
 [root@DW1 ~]# ip addr
