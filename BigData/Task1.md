@@ -39,7 +39,7 @@ virtualbox
 ```
 3. 进入GUI界面，新建三台虚拟机，每台分配1G内存，20G虚拟硬盘  
 ![](https://github.com/ChungChinKei/Datawhale/blob/master/BigData/picture/virtualbox.png)  
-注意:三台虚拟机内存总和不能大于实体机  
+`注意:三台虚拟机内存总和不能大于实体机` 
 
 4. 分配光驱并加载镜像文件
 5. 设置网络（桥接网卡）
