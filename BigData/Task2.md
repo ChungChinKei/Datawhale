@@ -1,3 +1,4 @@
+
 # 【Task 2】搭建Hadoop集群(3day)
 
 1. 搭建HA的Hadoop集群并验证，3节点(1主2从)，理解HA/Federation,并截图记录搭建过程
