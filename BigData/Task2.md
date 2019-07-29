@@ -78,7 +78,7 @@ vi /etc/hosts
 ### 2.Hadoop安装包下载  
 创建一个hadoop文件夹存放安装包
 ```
-[root@DW1 ~]# cd /usr
+[root@DW1 ~]# cd /usr/local
 [root@DW1 ~]# mkdir hadoop
 [root@DW1 ~]# cd hadoop
 ```
@@ -104,7 +104,7 @@ vi /etc/hosts
 [root@DW1 ~]# vi /etc/profile
 
 # 添加以下内容
-export HADOOP_HOME=/usr/hadoop/hadoop-3.2.0
+export HADOOP_HOME=/usr/local/hadoop/hadoop-3.2.0
 exprot PATH=$PATH:$HADOOP_HOME/bin
 
 [root@DW1 ~]# source /etc/profile
@@ -114,7 +114,7 @@ exprot PATH=$PATH:$HADOOP_HOME/bin
 [root@DW1 hadoop]# hadoop -version
 ```
 ### 3.修改hadoop的配置  
-配置core-site.xml
+配置core-site.xml(主要就是hdfs的地址)
 ```
 [root@DW1 hadoop-3.2.0]$ cd etc/hadoop
 [root@DW1 hadoop]# vi core-site.xml
@@ -126,4 +126,71 @@ exprot PATH=$PATH:$HADOOP_HOME/bin
     <value>hdfs://DW1:9000</value>
 </property>
 </configuration>
+```
+配置hdfs-site.xml  
+DW1为主节点，DW2、3为从节点，因此设置两个副本
+```
+[root@DW1 hadoop]# vi hdfs-site.xml
+
+#在最后添加以下内容
+<configuration>
+<property>
+  <name>dfs.name.dir</name>
+  <value>/usr/local/data/namenode</value>
+</property>
+<property>
+  <name>dfs.data.dir</name>
+  <value>/usr/local/data/datanode</value>
+</property>
+<property>
+  <name>dfs.tmp.dir</name>
+  <value>/usr/local/data/tmp</value>
+</property>
+<property>
+  <name>dfs.replication</name>
+  <value>2</value>
+</property>
+</configuration>
+```
+配置mapred-site.xml 
+```
+<configuration>
+<property>
+  <name>mapreduce.framework.name</name>
+  <value>yarn</value>
+</property>
+</configuration>
+```
+配置yarn-site.xml
+```
+<configuration>
+<property>
+  <name>yarn.resourcemanager.hostname</name>
+  <value>DW1</value>
+</property>
+<property>
+  <name>yarn.nodemanager.aux-services</name>
+  <value>mapreduce_shuffle</value>
+</property>
+</configuration>
+```
+配置slaves文件
+```
+[root@DW1 hadoop-3.2.0]$ vi slaves
+# 添加从节点DW2,DW3(有些版本会有主节点，去掉即可)
+DW2
+DW3
+```
+### 4.完成对从节点的设置
+配置
+```
+
+```
+配置
+```
+
+```
+配置
+```
+
 ```
