@@ -29,6 +29,8 @@
 ```
 [root@DW1 ~]# systemctl stop firewalld.service
 [root@DW1 ~]# systemctl disable firewalld.service
+[root@DW1 ~]# firewall-cmd --state
+not running
 ```
 
 关闭SELINUX
@@ -39,7 +41,41 @@
 # 重启完成设置
 [root@DW1 ~]# reboot
 ```
-安装JDK（已完成）
+安装JDK（已完成）  
+  
+建立ip与主机名的联系
+```
+vi /etc/hosts
+
+# 添加内容
+192.168.xx.xxx DW1
+192.168.xx.xxx DW2
+192.168.xx.xxx DW3
+
+#添加完成后可以以DWX代替ip地址，如：
+[root@DW1 ~]# ping DW2
+```
+配置SSH
+```
+# 创建并进入用户
+[root@DW1 ~]# useradd jamkey
+[root@DW1 ~]# su - jamkey
+
+# 通过ssh工具获取公匙密匙
+[jamkey@DW1 ~]$ ssh-keygen -t rsa
+
+# 进行ssh搭建
+[jamkey@DW1 ~]$ cd .ssh
+[jamkey@DW1 ~]$ cp id_rsa.pub authorized_keys
+[jamkey@DW1 ~]$ ssh-copy-id dw2
+[jamkey@DW1 ~]$ ssh-copy-id dw3
+
+# 这时dw2和dw3已可以对dw1免密码登录
+[jamkey@DW1 ~]$ ssh dw2
+[jamkey@DW1 ~]$ ssh dw3
+
+#对dw2和dw3也要重复一次上面的操作，保证三者都可以免密相互登录
+```
 
 ### 2.Hadoop安装包下载  
 创建一个hadoop文件夹存放安装包
