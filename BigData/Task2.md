@@ -25,6 +25,7 @@
 ## 搭建HA的Hadoop集群并验证  
 
 ### 1.安装Hadoop前的准备工作  
+### 2.Hadoop安装包下载  
 [下载hadoop安装包](http://archive.apache.org/dist/hadoop/core/)  
 
 通过命令行在虚拟机上下载：
@@ -32,4 +33,9 @@
 ```
 [root@DW1 ~]# wget http://apache.claz.org/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz
 ```
-或者通过上面的链接手动下载到主机，再通过
+或者通过上面的链接手动下载到主机，再通过xshell及lrzsz等工具上传到虚拟机：
+```
+[root@DW1 ~]# yum install -y lrzsz
+#通过rz命令进行上传
+[root@DW1 ~]# rz
+```
