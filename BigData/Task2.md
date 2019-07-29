@@ -177,20 +177,23 @@ DW1为主节点，DW2、3为从节点，因此设置两个副本
 配置slaves文件
 ```
 [root@DW1 hadoop-3.2.0]$ vi slaves
-# 添加从节点DW2,DW3(有些版本会有主节点，去掉即可)
+
+# 添加从节点DW2,DW3(如果有默认的localhost，删掉即可)
 DW2
 DW3
 ```
 ### 4.完成对从节点的设置
-配置
+创建data文件夹(DW2,DW3也要创建)
 ```
-
+# /usr/local 下创建data文件夹
+[root@DW1 local]# mkdir data
 ```
-配置
+将hadoop拷贝到DW2,DW3
 ```
-
+[root@DW1 local]# scp -r hadoop DW2:/usr/local
+[root@DW1 local]# scp -r hadoop DW3:/usr/local
 ```
-配置
+同时DW2,DW3也要配置换环境等
 ```
 
 ```
