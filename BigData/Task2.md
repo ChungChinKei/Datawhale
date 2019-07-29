@@ -34,7 +34,10 @@
 关闭SELINUX
 ```
 # 修改为SELINUX=disabled
-vi etc/selinux/config
+[root@DW1 ~]# vi etc/selinux/config
+
+# 重启完成设置
+[root@DW1 ~]# reboot
 ```
 安装JDK（已完成）
 
@@ -61,4 +64,18 @@ vi etc/selinux/config
 解压安装包：
 ```
 [root@DW1 hadoop]# tar -xzvf hadoop-3.2.0.tar.gz
+```
+修改环境变量：
+```
+[root@DW1 ~]# vi /etc/profile
+
+# 添加以下内容
+export HADOOP_HOME=/home/heitao/soft/hadoop-3.2.0
+exprot PATH=$PATH:$ HADOOP_HOME/bin
+
+[root@DW1 ~]# source /etc/profile
+```
+检验是否安装成功：
+```
+[root@DW1 hadoop]# hadoop -version
 ```
