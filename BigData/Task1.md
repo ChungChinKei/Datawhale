@@ -325,7 +325,11 @@ repolist: 26,068
 ```
 2. 进行安装
 ```
-[root@DW1 yum.repos.d]# yum install java-1.8.0-openjdk
+# 这里有个宇宙深坑
+# 版本要选带devel的，如java-1.8.0-openjdk-devel.x86_64，不能简单输入java-1.8.0-openjdk
+# 否则装完只有jre,没有bin,lib等等
+[root@DW1 yum.repos.d]# yum install java-1.8.0-openjdk-devel.x86_64
+
 ```
 3. 设置环境变量
 ```
@@ -333,11 +337,10 @@ repolist: 26,068
 ```
 在profile文件夹中添加以下内容
 ```
-JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10.e17_6.x86_64 
-JRE_HOME=$JAVA_HOME/jre 
-CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib 
-PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin 
-export JAVA_HOME JRE_HOME CLASS_PATH PATH 
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64  
+CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+PATH=$PATH:$JAVA_HOME/bin 
+export JAVA_HOME CLASS_PATH PATH 
 ```
 4. 进行验证
 ```
