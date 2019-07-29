@@ -69,6 +69,8 @@ vi /etc/hosts
 # 这时dw2和dw3已可以对dw1免密码登录
 [root@DW1 ~]$ ssh dw2
 [root@DW1 ~]$ ssh dw3
+
+#对DW2,DW3也进行相同地操作，保证3台设备可以免密互联
 ```
 
 ### 2.Hadoop安装包下载  
@@ -224,5 +226,21 @@ ERROR: but there is no HDFS_DATANODE_USER defined. Aborting operation.
 Starting secondary namenodes [DW1]
 ERROR: Attempting to operate on hdfs secondarynamenode as root
 ERROR: but there is no HDFS_SECONDARYNAMENODE_USER defined. Aborting operation.
+```
+在/usr/local/hadoop/hadoop-3.2.0/sbin下，
+将start-dfs.sh，stop-dfs.sh两个文件顶部添加以下参数：
+```
+#!/usr/bin/env bash
+HDFS_DATANODE_USER=root
+HADOOP_SECURE_DN_USER=hdfs
+HDFS_NAMENODE_USER=root
+HDFS_SECONDARYNAMENODE_USER=root
+```
+start-yarn.sh，stop-yarn.sh的顶部添加以下参数：
+```
+#!/usr/bin/env bash
+YARN_RESOURCEMANAGER_USER=root
+HADOOP_SECURE_DN_USER=yarn
+YARN_NODEMANAGER_USER=root
 ```
 
