@@ -20,3 +20,16 @@
 
 集群规划2-清晰：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190420140245947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlaXRhbzUyMDA=,size_16,color_FFFFFF,t_70)
+
+---
+## 搭建HA的Hadoop集群并验证  
+
+### 1.安装Hadoop前的准备工作  
+[下载hadoop安装包](http://archive.apache.org/dist/hadoop/core/)  
+
+通过命令行在虚拟机上下载：
+
+```
+[root@DW1 ~]# wget http://apache.claz.org/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz
+```
+或者通过上面的链接手动下载到主机，再通过
