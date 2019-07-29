@@ -25,24 +25,40 @@
 ## 搭建HA的Hadoop集群并验证  
 
 ### 1.安装Hadoop前的准备工作 
+关闭防火墙
+```
+[root@DW1 ~]# systemctl stop firewalld.service
+[root@DW1 ~]# systemctl disable firewalld.service
+```
+
 关闭SELINUX
 ```
 # 修改为SELINUX=disabled
 vi etc/selinux/config
 ```
+安装JDK（已完成）
 
 ### 2.Hadoop安装包下载  
-[下载hadoop安装包](http://archive.apache.org/dist/hadoop/core/)  
+创建一个hadoop文件夹存放安装包
+```
+[root@DW1 ~]# cd /usr
+[root@DW1 ~]# mkdir hadoop
+[root@DW1 ~]# cd hadoop
+```
 
 通过命令行在虚拟机上下载：
 
 ```
-[root@DW1 ~]# wget http://apache.claz.org/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz
+[root@DW1 hadoop]# wget http://apache.claz.org/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz
 ```
-或者通过上面的链接手动下载到主机，再通过xshell及lrzsz等工具上传到虚拟机：
+或者通过[下载链接](http://archive.apache.org/dist/hadoop/core/)  手动下载到主机，再通过xshell及lrzsz等工具上传到虚拟机：
 ```
-[root@DW1 ~]# yum install -y lrzsz
+[root@DW1 hadoop]# yum install -y lrzsz
 
 #通过rz命令进行上传
-[root@DW1 ~]# rz
+[root@DW1 hadoop]# rz
+```
+解压安装包：
+```
+[root@DW1 hadoop]# tar -xzvf hadoop-3.2.0.tar.gz
 ```
