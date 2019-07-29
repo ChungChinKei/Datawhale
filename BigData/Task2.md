@@ -57,22 +57,18 @@ vi /etc/hosts
 ```
 配置SSH
 ```
-# 创建并进入用户
-[root@DW1 ~]# useradd jamkey
-[root@DW1 ~]# su - jamkey
-
 # 通过ssh工具获取公匙密匙
-[jamkey@DW1 ~]$ ssh-keygen -t rsa
+[root@DW1 ~]$ ssh-keygen -t rsa
 
 # 进行ssh搭建
-[jamkey@DW1 ~]$ cd .ssh
-[jamkey@DW1 ~]$ cp id_rsa.pub authorized_keys
-[jamkey@DW1 ~]$ ssh-copy-id dw2
-[jamkey@DW1 ~]$ ssh-copy-id dw3
+[root@DW1 ~]$ cd .ssh
+[root@DW1 ~]$ cp id_rsa.pub authorized_keys
+[root@DW1 ~]$ ssh-copy-id dw2
+[root@DW1 ~]$ ssh-copy-id dw3
 
 # 这时dw2和dw3已可以对dw1免密码登录
-[jamkey@DW1 ~]$ ssh dw2
-[jamkey@DW1 ~]$ ssh dw3
+[root@DW1 ~]$ ssh dw2
+[root@DW1 ~]$ ssh dw3
 ```
 
 ### 2.Hadoop安装包下载  
@@ -182,7 +178,17 @@ DW1为主节点，DW2、3为从节点，因此设置两个副本
 DW2
 DW3
 ```
-### 4.完成对从节点的设置
+配置hadoop-env.sh
+```
+添加JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64
+```
+o配置yarn-env.sh
+```
+同样添加添加JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64
+```
+### 4.完成对从节点的配置
 创建data文件夹(DW2,DW3也要创建)
 ```
 # /usr/local 下创建data文件夹
@@ -195,5 +201,28 @@ DW3
 ```
 同时DW2,DW3也要配置换环境等
 ```
-
+#进行检验
+[root@DW2 local]# java -version
+[root@DW2 local]# hadoop -version
 ```
+### 5.集群启动
+在DW1上节点格式化
+```
+[root@DW1 ~]# hdfs namenode -format
+```
+启动集群
+```
+[root@DW1 ~]# start-dfs.sh
+```
+结果遇到以下问题：
+```
+ERROR: Attempting to operate on hdfs namenode as root
+ERROR: but there is no HDFS_NAMENODE_USER defined. Aborting operation.
+Starting datanodes
+ERROR: Attempting to operate on hdfs datanode as root
+ERROR: but there is no HDFS_DATANODE_USER defined. Aborting operation.
+Starting secondary namenodes [DW1]
+ERROR: Attempting to operate on hdfs secondarynamenode as root
+ERROR: but there is no HDFS_SECONDARYNAMENODE_USER defined. Aborting operation.
+```
+
