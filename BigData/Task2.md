@@ -73,8 +73,6 @@ vi /etc/hosts
 # 这时dw2和dw3已可以对dw1免密码登录
 [jamkey@DW1 ~]$ ssh dw2
 [jamkey@DW1 ~]$ ssh dw3
-
-#对dw2和dw3也要重复一次上面的操作，保证三者都可以免密相互登录
 ```
 
 ### 2.Hadoop安装包下载  
@@ -106,12 +104,26 @@ vi /etc/hosts
 [root@DW1 ~]# vi /etc/profile
 
 # 添加以下内容
-export HADOOP_HOME=/home/heitao/soft/hadoop-3.2.0
-exprot PATH=$PATH:$ HADOOP_HOME/bin
+export HADOOP_HOME=/usr/hadoop/hadoop-3.2.0
+exprot PATH=$PATH:$HADOOP_HOME/bin
 
 [root@DW1 ~]# source /etc/profile
 ```
 检验是否安装成功：
 ```
 [root@DW1 hadoop]# hadoop -version
+```
+### 3.修改hadoop的配置  
+配置core-site.xml
+```
+[root@DW1 hadoop-3.2.0]$ cd etc/hadoop
+[root@DW1 hadoop]# vi core-site.xml
+
+#在最后添加以下内容
+<configuration>
+<property>
+    <name>fs.default.name</name>
+    <value>hdfs://DW1:9000</value>
+</property>
+</configuration>
 ```
