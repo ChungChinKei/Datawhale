@@ -24,7 +24,13 @@
 ---
 ## 搭建HA的Hadoop集群并验证  
 
-### 1.安装Hadoop前的准备工作  
+### 1.安装Hadoop前的准备工作 
+关闭SELINUX
+```
+# 修改为SELINUX=disabled
+vi etc/selinux/config
+```
+
 ### 2.Hadoop安装包下载  
 [下载hadoop安装包](http://archive.apache.org/dist/hadoop/core/)  
 
@@ -36,6 +42,7 @@
 或者通过上面的链接手动下载到主机，再通过xshell及lrzsz等工具上传到虚拟机：
 ```
 [root@DW1 ~]# yum install -y lrzsz
+
 #通过rz命令进行上传
 [root@DW1 ~]# rz
 ```
