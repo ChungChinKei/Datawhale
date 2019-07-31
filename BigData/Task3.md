@@ -40,7 +40,19 @@ hadoop fs -rm    #删除HDFS文件
 Found 1 items
 drwxr-xr-x   - root supergroup          0 2019-07-29 07:13 /input
 
+# 预先上传一个大于128M的文件test.flv到local,然后上传到HDFS
+[root@DW1 ~]# cd /usr/local/
+[root@DW1 local]# hadoop fs -put test.flv /input
 
+# ls命令可以看到我们刚才上传的文件
+[root@DW1 local]# hadoop fs -ls /input
+Found 1 items
+-rw-r--r--   2 root supergroup  185701130 2019-07-29 07:46 /input/test.flv
 
+# 在DW2上下载test.flv
+[root@DW2 ~]# cd /usr/local/
+[root@DW2 local]# hadoop fs -get /input/test.flv
+[root@DW2 local]# ls
+bin  data  etc  games  hadoop  include  lib  lib64  libexec  sbin  share  src  test.flv
 
 ```
