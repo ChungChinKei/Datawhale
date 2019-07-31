@@ -48,7 +48,9 @@ drwxr-xr-x   - root supergroup          0 2019-07-29 07:13 /input
 [root@DW1 local]# hadoop fs -ls /input
 Found 1 items
 -rw-r--r--   2 root supergroup  185701130 2019-07-29 07:46 /input/test.flv
-
+```
+### 下载文件
+```
 # 在DW2上下载test.flv
 [root@DW2 ~]# cd /usr/local/
 [root@DW2 local]# hadoop fs -get /input/test.flv
