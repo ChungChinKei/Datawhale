@@ -29,6 +29,8 @@ hadoop fs -get   #复制HDFS文件到本地
 hadoop fs -cp    #复制HDJS文件
 hadoop fs -rm    #删除HDFS文件
 ```
+## Python操作HDFS的API
+有错误，待解决
 ## HDFS文件上传和下载过程
 ### 上传文件
 ```
