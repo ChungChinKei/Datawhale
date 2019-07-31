@@ -16,4 +16,31 @@
 参考资料：[Python3调用Hadoop的API](https://www.cnblogs.com/sss4/p/10443497.html)
 
 ---
-## 认识HDFS
+## HDFS的概念相关
+写在了本人的CSDN博客：https://blog.csdn.net/qq_39315740/article/details/97955575
+
+## HDFS常用命令
+hadoop hdfs的命令与linux常用的命令非常相似，如：
+```
+hadoop fs -mkdir #创建HDFS目录 
+hadoop fs -ls    #列出DFS目录 
+hadoop fs -put   #复制本地文件到HDFS
+hadoop fs -get   #复制HDFS文件到本地
+hadoop fs -cp    #复制HDJS文件
+hadoop fs -rm    #删除HDFS文件
+```
+## HDFS文件上传和下载过程
+### 上传文件
+```
+# 创建input文件夹
+[root@DW1 ~]# hadoop fs -mkdir /input 
+
+# 查看hdfs的文件，可以看到刚才创建的文件夹
+[root@DW1 ~]# hadoop fs -ls /
+Found 1 items
+drwxr-xr-x   - root supergroup          0 2019-07-29 07:13 /input
+
+
+
+
+```
