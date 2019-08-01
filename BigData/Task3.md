@@ -17,7 +17,7 @@
 
 ---
 ## HDFS的概念相关
-写在了本人的CSDN博客：https://blog.csdn.net/qq_39315740/article/details/97955575
+初步认识HDFS的原理及架构：https://blog.csdn.net/qq_39315740/article/details/97955575
 
 ## HDFS常用命令
 hadoop hdfs的命令与linux常用的命令非常相似，如：
