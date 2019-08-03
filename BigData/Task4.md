@@ -13,3 +13,10 @@
 参考: [https://segmentfault.com/a/1190000002672666](https://segmentfault.com/a/1190000002672666)
 
 参考资料：[Python3调用Hadoop的API](https://www.cnblogs.com/sss4/p/10443497.html)
+
+---
+## MR原理
+[初步认识MapReduce](https://blog.csdn.net/qq_39315740/article/details/98076571)
+## WordCouunt实例
+[Python实现MapReduce的WordCount实例](https://blog.csdn.net/qq_39315740/article/details/98108912)
+## 计算movielen中每个用户的平均评分
