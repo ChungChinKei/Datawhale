@@ -19,4 +19,4 @@
 [初步认识MapReduce](https://blog.csdn.net/qq_39315740/article/details/98076571)
 ## WordCouunt实例
 [Python实现MapReduce的WordCount实例](https://blog.csdn.net/qq_39315740/article/details/98108912)
-## 计算movielen中每个用户的平均评分
+## 计算MovieLens中每个用户的平均评分
