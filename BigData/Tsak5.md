@@ -29,5 +29,8 @@
 ## spark集群搭建
 [基于Hadoop搭建Spark集群](https://blog.csdn.net/qq_39315740/article/details/98477570)
 ## Python3
-[CentOS7下安装Python3](https://blog.csdn.net/qq_39315740/article/details/98482884)
-卡在了ssl模块的问题，暂时没解决
+[CentOS7下安装Python3](https://blog.csdn.net/qq_39315740/article/details/98482884)(存在无法找到ssl模块的问题)  
+
+[CentOS7下安装Anaconda](https://mp.csdn.net/mdeditor/98505984#)
+
+
