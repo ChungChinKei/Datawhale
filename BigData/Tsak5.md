@@ -31,6 +31,6 @@
 ## Python3
 [CentOS7下安装Python3](https://blog.csdn.net/qq_39315740/article/details/98482884)(存在无法找到ssl模块的问题)  
 
-[CentOS7下安装Anaconda](https://mp.csdn.net/mdeditor/98505984#)
+[CentOS7下安装Anaconda和搭建jupyter notebook环境](https://mp.csdn.net/mdeditor/98505984#)
 
 
