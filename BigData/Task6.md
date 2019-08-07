@@ -25,4 +25,6 @@
 ---
 ## MySQL与Hive搭建  
 [CentOS7下yum方式安装MySQL5.7](https://blog.csdn.net/qq_39315740/article/details/98615204)  
-[CentOS7+ Hadoop3.2.0+MySQL5.7安装配置Hive3.1.1](https://blog.csdn.net/qq_39315740/article/details/98626518)
+[CentOS7+ Hadoop3.2.0+MySQL5.7安装配置Hive3.1.1](https://blog.csdn.net/qq_39315740/article/details/98626518)  
+## Hive基本操作
+[HQL实现Hive的WordCount实例](https://blog.csdn.net/qq_39315740/article/details/98745406)  
