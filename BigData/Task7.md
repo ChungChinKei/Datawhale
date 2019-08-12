@@ -19,3 +19,16 @@ movielen 数据集：http://files.grouplens.org/datasets/movielens/ml-100k.zip
 	* Spark LR
 	
 	* Spark TFIDF
+---
+## 计算每个content的CTR  
+```python
+import pandas as pd
+df = pd.read_csv("file:///usr/local/lily/task7/content_list_id.txt", sep="\t")
+df['content_list_len']=df['content_list'].apply(lambda x:len(x.split(',')))
+df['content_id_len']=df['content_id'].apply(lambda x:len(x.split(',')))
+df['ctr'] = df['content_id_len'] / df['content_list_len']
+```
+## Spark实现ALS矩阵分解算法
+[pyspark实现ALS矩阵分解算法](https://blog.csdn.net/qq_39315740/article/details/99298947)  
+## 使用Spark分析Amazon DataSet(实现 Spark LR、Spark TFIDF)
+[Spark分析Amazon DataSet(实现Spark TF-IDF)](https://blog.csdn.net/qq_39315740/article/details/99304266)  
